@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: busybox-low
+  name: busybox-low
+spec:
+  containers:
+  - command:
+    - env
+    image: busybox
+    name: busybox-low
+    resources:
+      requests:
+        memory: "100Mi"
+        cpu: "50m"
+      limits:
+        memory: "250Mi"
+        cpu: "100m"
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}

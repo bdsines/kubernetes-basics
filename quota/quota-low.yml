@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  creationTimestamp: null
+  name: quota-low
+spec:
+  hard:
+    cpu: "1"
+    memory: .5G
+    pods: "2"
+  scopeSelector:
+    matchExpressions:
+    - operator: In
+      scopeName: PriorityClass
+      values: ["low"]
